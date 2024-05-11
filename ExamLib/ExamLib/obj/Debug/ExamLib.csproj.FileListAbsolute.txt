@@ -1,0 +1,10 @@
+C:\Users\161PC\source\repos\ExamLib\ExamLib\bin\Debug\ExamLib.exe.config
+C:\Users\161PC\source\repos\ExamLib\ExamLib\bin\Debug\ExamLib.exe
+C:\Users\161PC\source\repos\ExamLib\ExamLib\bin\Debug\ExamLib.pdb
+C:\Users\161PC\source\repos\ExamLib\ExamLib\obj\Debug\ExamLib.csproj.AssemblyReference.cache
+C:\Users\161PC\source\repos\ExamLib\ExamLib\obj\Debug\ExamLib.csproj.CoreCompileInputs.cache
+C:\Users\161PC\source\repos\ExamLib\ExamLib\obj\Debug\ExamLib.exe
+C:\Users\161PC\source\repos\ExamLib\ExamLib\obj\Debug\ExamLib.pdb
+C:\Users\161PC\source\repos\ExamLib\ExamLib\bin\Debug\Dapper.dll
+C:\Users\161PC\source\repos\ExamLib\ExamLib\bin\Debug\Dapper.xml
+C:\Users\161PC\source\repos\ExamLib\ExamLib\obj\Debug\ExamLib.csproj.CopyComplete
