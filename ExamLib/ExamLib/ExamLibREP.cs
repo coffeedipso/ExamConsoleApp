@@ -32,7 +32,7 @@ namespace ExamLib
             {
                 books = connection.Query<LibraryBook>(
                     @"SELECT Book_Id,Title, Author_FirstName, Author_SecondName,Author_SurName, Publisher, Page_Count, Genre, Publication_Year, Cost_Price, Selling_Price, Continuation,SellBook,Writeoffbook,ContributeBook,Aside
-              FROM Books;")
+              FROM BooksMain;")
                     .Select(e => new LibraryBook
                     {
                         Book_Id = e.Book_Id,

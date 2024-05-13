@@ -26,6 +26,11 @@ namespace ExamLib
                 Console.WriteLine($"Cost Price: {book.Cost_Price}");
                 Console.WriteLine($"Selling Price: {book.Selling_Price}");
                 Console.WriteLine($"Continuation: {book.Continuation}");
+                Console.WriteLine($"Sell book: {book.SellBook}");
+                Console.WriteLine($"Write off book: {book.Writeoffbook}");
+                Console.WriteLine($"Contribute book: {book.ContributeBook}");
+                Console.WriteLine($"Aside: {book.Aside}");
+
                 Console.WriteLine();
             }
         }
@@ -228,94 +233,116 @@ namespace ExamLib
                 return books;
             }
         }
-        //public static List<LibraryBook> SellBook(List<LibraryBook> books)
-        //{
-        //    try
-        //    {
-        //        Console.WriteLine("Enter the Book ID you want to sell:");
-        //        int bookIdToSell = int.Parse(Console.ReadLine());
 
-        //        LibraryBook bookToSell = books.FirstOrDefault(b => b.Book_Id == bookIdToSell);
+        public static List<LibraryBook> SellBook(List<LibraryBook> books)
+        {
+            try
+            {
+                Console.WriteLine("Enter the Book ID you want to sell:");
+                int bookIdToSell = int.Parse(Console.ReadLine());
 
-        //        if (bookToSell != null)
-        //        {
-        //            books.Remove(bookToSell);
-        //            Console.WriteLine("Book with ID " + bookIdToSell + " successfully sold!");
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Book with ID " + bookIdToSell + " not found in the library.");
-        //        }
+                LibraryBook bookToSell = books.FirstOrDefault(b => b.Book_Id == bookIdToSell);
 
-        //        return books;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("An error occurred while selling the book: " + ex.Message);
-        //        return books;
-        //    }
-        //}
-        //public static List<LibraryBook> WriteOffBook(List<LibraryBook> books)
-        //{
-        //    try
-        //    {
-        //        Console.WriteLine("Enter the Book ID you want to write off:");
-        //        int bookIdToWriteOff = int.Parse(Console.ReadLine());
+                if (bookToSell != null)
+                {
+                    bookToSell.SellBook = true;
+                    Console.WriteLine("Book with ID " + bookIdToSell + " marked as sold!");
+                }
+                else
+                {
+                    Console.WriteLine("Book with ID " + bookIdToSell + " not found in the library.");
+                }
 
-        //        LibraryBook bookToWriteOff = books.FirstOrDefault(b => b.Book_Id == bookIdToWriteOff);
+                return books;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while marking the book as sold: " + ex.Message);
+                return books;
+            }
+        }
+        public static List<LibraryBook> WriteOffBook(List<LibraryBook> books)
+        {
+            try
+            {
+                Console.WriteLine("Enter the Book ID you want to write off:");
+                int bookIdToWriteOff = int.Parse(Console.ReadLine());
 
-        //        if (bookToWriteOff != null)
-        //        {
-        //            books.Remove(bookToWriteOff);
-        //            Console.WriteLine("Book with ID " + bookIdToWriteOff + " successfully written off!");
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Book with ID " + bookIdToWriteOff + " not found in the library.");
-        //        }
+                LibraryBook bookToWriteOff = books.FirstOrDefault(b => b.Book_Id == bookIdToWriteOff);
 
-        //        return books;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("An error occurred while writing off the book: " + ex.Message);
-        //        return books;
-        //    }
-        //}
-        //public static List<LibraryBook> PutBookAside(List<LibraryBook> books)
-        //{
-        //    try
-        //    {
-        //        Console.WriteLine("Enter the Book ID you want to put aside for a specific customer:");
-        //        int bookIdToPutAside = int.Parse(Console.ReadLine());
+                if (bookToWriteOff != null)
+                {
+                    bookToWriteOff.Writeoffbook = true;
+                    Console.WriteLine("Book with ID " + bookIdToWriteOff + " marked as written off!");
+                }
+                else
+                {
+                    Console.WriteLine("Book with ID " + bookIdToWriteOff + " not found in the library.");
+                }
 
-        //        LibraryBook bookToPutAside = books.FirstOrDefault(b => b.Book_Id == bookIdToPutAside);
+                return books;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while marking the book as written off: " + ex.Message);
+                return books;
+            }
+        }
+        public static List<LibraryBook> PutBookAside(List<LibraryBook> books)
+        {
+            try
+            {
+                Console.WriteLine("Enter the Book ID you want to put aside for a specific customer:");
+                int bookIdToPutAside = int.Parse(Console.ReadLine());
 
-        //        if (bookToPutAside != null)
-        //        {
-        //            Console.WriteLine("Enter the full name of the specific customer for whom the book is being put aside:");
-        //            string customerFullName = Console.ReadLine();
+                LibraryBook bookToPutAside = books.FirstOrDefault(b => b.Book_Id == bookIdToPutAside);
 
-        //            // Display message that book is put aside for the customer
-        //            Console.WriteLine($"Book with ID {bookIdToPutAside} successfully put aside for {customerFullName}.");
+                if (bookToPutAside != null)
+                {
+                    bookToPutAside.Aside = true;
+                    Console.WriteLine($"Book with ID {bookIdToPutAside} successfully put aside.");
+                }
+                else
+                {
+                    Console.WriteLine($"Book with ID {bookIdToPutAside} not found in the library.");
+                }
 
-        //            // Remove the book from the library
-        //            books.Remove(bookToPutAside);
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine($"Book with ID {bookIdToPutAside} not found in the library.");
-        //        }
+                return books;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while putting the book aside: " + ex.Message);
+                return books;
+            }
+        }
+        public static List<LibraryBook> ContributeBook(List<LibraryBook> books)
+        {
+            try
+            {
+                Console.WriteLine("Enter the Book ID you want to contribute to promotion:");
+                int bookIdToContribute = int.Parse(Console.ReadLine());
 
-        //        return books;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("An error occurred while putting the book aside: " + ex.Message);
-        //        return books;
-        //    }
-        //}
+                LibraryBook bookToContribute = books.FirstOrDefault(b => b.Book_Id == bookIdToContribute);
 
+                if (bookToContribute != null)
+                {
+                    // Update the book information to mark it as contributed to promotion
+                    bookToContribute.ContributeBook = true;
 
+                    Console.WriteLine($"Book with ID {bookIdToContribute} successfully contributed to promotion.");
+                }
+                else
+                {
+                    Console.WriteLine($"Book with ID {bookIdToContribute} not found in the library.");
+                }
+
+                return books;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while contributing the book to promotion: " + ex.Message);
+                return books;
+            }
+        }
     }
 }

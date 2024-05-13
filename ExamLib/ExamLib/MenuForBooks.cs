@@ -70,19 +70,20 @@ namespace ExamLib
                     Menu(connection);
                     break;
                 case 4:
-                  //  books = ActionsWithBooks.SellBook(books);
-                  //  Menu(connection);
+                    books = ActionsWithBooks.SellBook(books);
+                    Menu(connection);
                     break;
                 case 5:
-                 //   books = ActionsWithBooks.WriteOffBook(books);
-                 //   Menu(connection);
+                    books = ActionsWithBooks.WriteOffBook(books);
+                    Menu(connection);
                     break;
                 case 6:
-                
+                    ActionsWithBooks.ContributeBook(books);
+                    Menu(connection);
                     break;
                 case 7:
-                   //books = ActionsWithBooks.PutBookAside(books);
-                   // Menu(connection);
+                    books = ActionsWithBooks.PutBookAside(books);
+                    Menu(connection);
                     break;
                 case 8:
                     ActionsWithBooks.PrintBookList(books);
